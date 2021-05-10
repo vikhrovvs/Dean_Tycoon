@@ -11,6 +11,7 @@ namespace UI.InGame
         private void OnEnable()
         {
             SetMoney(Game.Player.Money);
+            Game.Player.MoneyChanged += SetMoney;
         }
 
         private void SetMoney(float money)

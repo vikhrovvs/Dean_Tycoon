@@ -1,5 +1,5 @@
 using System;
-using Course;
+using Task;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -22,10 +22,10 @@ namespace Student
             m_Asset = asset;
         }
 
-        public void PassCourse(CourseData course)
+        public void PassCourse(TaskData task)
         {
-            m_Score = Mathf.Clamp((m_Score + course.ScoreDelta * m_Motivation), m_Asset.m_MINScore, m_Asset.m_MAXScore);
-            m_Motivation = Mathf.Clamp((m_Motivation + course.MotivationDelta), m_Asset.m_MINMotivation,
+            m_Score = Mathf.Clamp((m_Score + task.ScoreDelta * m_Motivation), m_Asset.m_MINScore, m_Asset.m_MAXScore);
+            m_Motivation = Mathf.Clamp((m_Motivation + task.MotivationDelta), m_Asset.m_MINMotivation,
                 m_Asset.m_MAXMotivation);
         }
     }

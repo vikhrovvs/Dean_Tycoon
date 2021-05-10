@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Course;
+using Task;
 using UnityEngine;
 
 namespace Student
@@ -30,11 +30,11 @@ namespace Student
             }
         }
 
-        public void PassCourse(CourseData course)
+        public void PassCourse(TaskData task)
         {
             foreach (StudentData student in StudentDatas)
             {
-                student.PassCourse(course);
+                student.PassCourse(task);
             }
            
         }

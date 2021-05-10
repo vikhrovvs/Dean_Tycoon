@@ -4,6 +4,7 @@ using Employee;
 using Field;
 using Runtime;
 using Student;
+using Task;
 using UnityEngine;
 using Grid = Field.Grid;
 using Object = UnityEngine.Object;
@@ -20,6 +21,7 @@ namespace Main
         public readonly Grid Grid;
         public List<DeskData> DeskDatas = new List<DeskData>();
         public List<GroupData> GroupDatas = new List<GroupData>();
+        public List<TaskData> TaskDatas = new List<TaskData>();
 
         public event Action<float> MoneyChanged;
 

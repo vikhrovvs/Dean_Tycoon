@@ -1,3 +1,4 @@
+using Runtime;
 using Student;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,7 +30,7 @@ namespace UI.InGame.HireStudent
         private void OnClick()
         {
             Debug.Log("Hired student " + m_Asset.m_StudentType);
-            //Game.Player.HireStudent(m_Asset);
+            Game.Player.HireStudent(m_Asset);
         }
     }
 }

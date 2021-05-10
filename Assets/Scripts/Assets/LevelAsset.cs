@@ -3,6 +3,7 @@ using Employee;
 using Field;
 using Main;
 using Runtime;
+using Student;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -13,5 +14,6 @@ namespace Assets
     public class LevelAsset : ScriptableObject
     {
         public SceneAsset SceneAsset;
+        public StudentAsset[] StudentAssets;
     }
 }

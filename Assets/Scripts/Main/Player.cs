@@ -28,7 +28,7 @@ namespace Main
 
 
         //public readonly EnemySearch EnemySearch;
-        private TaskManagementUI m_TaskManagementUI;
+        public TaskManagementUI TaskManagementUI;
 
         public Player()
         {
@@ -91,7 +91,7 @@ namespace Main
 
         public void SetTaskInfoUI(TaskManagementUI taskManagementUI)
         {
-            m_TaskManagementUI = taskManagementUI;
+            TaskManagementUI = taskManagementUI;
         }
       
         public void CreateTask(DeskData deskData, GroupData groupData)

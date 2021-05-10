@@ -2,6 +2,7 @@ using System;
 using Employee;
 using Runtime;
 using Student;
+using UI.InGame.TaskManagement;
 using UnityEditor;
 using UnityEngine;
 
@@ -27,6 +28,8 @@ namespace Task
         public float CurrentProgress = 0f;
         public float Duration = 100f;
 
+        private TaskInfoUI m_UI;
+
         public TaskData(DeskData assignedDesk, GroupData assignedGroup)
         {
             m_Price = 1;
@@ -37,6 +40,8 @@ namespace Task
             AssignedDesk = assignedDesk;
             AssignedGroup = assignedGroup;
             //Game.Player.TaskDatas.Add(this);
+
+            m_UI = Game.Player.TaskManagementUI.AddTask(this);
         }
 
         public void MakeProgress(float deltaTime)
@@ -54,6 +59,7 @@ namespace Task
 
         public void TaskCompleted()
         {
+            m_UI.Complete();
             Debug.Log("Removed task");
             AssignedGroup.PassCourse(this);
             Game.Player.TaskDatas.Remove(this);

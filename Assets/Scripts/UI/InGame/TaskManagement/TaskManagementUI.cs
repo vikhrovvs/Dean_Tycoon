@@ -16,7 +16,7 @@ namespace UI.InGame.TaskManagement
             Game.Player.SetTaskInfoUI(this);
         }
 
-        private TaskInfoUI AddTask(TaskData data)
+        public TaskInfoUI AddTask(TaskData data)
         {
             TaskInfoUI taskInfoUI = Instantiate(m_TaskInfoUIPrefab, m_Content);
             taskInfoUI.SetTask(data);

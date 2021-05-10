@@ -13,5 +13,10 @@ namespace UI.InGame.TaskManagement
             m_Data = data;
             duration.text = $"Duration: {data.Duration}";
         }
+
+        public void Complete()
+        {
+            Destroy(gameObject);
+        }
     }
 }

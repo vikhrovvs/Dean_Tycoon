@@ -7,6 +7,7 @@ namespace UI
 {
     public class StudentInfoUI: MonoBehaviour
     {
+        [SerializeField] private Text m_StudentType;
         [SerializeField] private Text m_PriceText;
         [SerializeField] private Text m_ScoreText;
         [SerializeField] private Text m_MotivationText;
@@ -18,14 +19,18 @@ namespace UI
         public void SetStudent(StudentAsset asset)
         {
             m_Asset = asset;
-            m_PriceText.text = $"Price: {asset.price}";
-            m_ScoreText.text = $"Score: from {asset.m_MINScore} to {asset.m_MAXScore}";
-            m_MotivationText.text = $"Score: from {asset.m_MINMotivation} to {asset.m_MAXMotivation}";
+            m_StudentType.text = asset.m_StudentType;
+            m_PriceText.text = $"Стоимость обучения: {asset.price}";
+            m_ScoreText.text = $"Начальный балл: от {asset.m_MINScore} до {asset.m_MAXScore}";
+            m_MotivationText.text = $"Начальная мотивация: от {asset.m_MINMotivation} до {asset.m_MAXMotivation}";
+            
+            m_ChooseButton.onClick.AddListener(OnClick);
         }
 
         private void OnClick()
         {
-            Game.Player.HireStudent(m_Asset);
+            Debug.Log("Click!");
+            //Game.Player.HireStudent(m_Asset);
         }
     }
 }

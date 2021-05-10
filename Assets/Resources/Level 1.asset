@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   SceneAsset: {fileID: 102900000, guid: 39f5dd96274dd64458e5d4aa1c0cd85c, type: 3}
-  InitDeskAsset: {fileID: 11400000, guid: fdd9e455fa5683e4e9c7306e42b09b1c, type: 2}
-  InitDeskPosition: {x: 0, y: 0, z: 0}
+  StudentAssets:
+  - {fileID: 11400000, guid: da50b12bad2d82246b01f57fc8b21105, type: 2}
+  - {fileID: 11400000, guid: 8d4fb2e3ed4506b45a911c28943ac2ef, type: 2}
+  - {fileID: 11400000, guid: e3e0e4f2df4474748a926d70c05ff1f1, type: 2}

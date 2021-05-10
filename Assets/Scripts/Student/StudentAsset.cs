@@ -5,6 +5,7 @@ namespace Student
     [CreateAssetMenu(menuName = "Assets/Student Asset", fileName = "Student Asset")]
     public class StudentAsset : ScriptableObject
     {
+        public string m_StudentType;
         public float m_MINScore;
         public float m_MAXScore;
 

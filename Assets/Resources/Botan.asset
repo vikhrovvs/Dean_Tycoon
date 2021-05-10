@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3493e3c1665862046b030f2f1826f0a3, type: 3}
-  m_Name: Common Student
+  m_Name: Botan
   m_EditorClassIdentifier: 
-  m_StudentType: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u0427\u0435\u043B"
-  m_MINScore: 3
+  m_StudentType: "\u0411\u043E\u0442\u0430\u043D"
+  m_MINScore: 7
   m_MAXScore: 10
-  m_MINMotivation: 0.5
+  m_MINMotivation: 0.9
   m_MAXMotivation: 1.5
   price: 0

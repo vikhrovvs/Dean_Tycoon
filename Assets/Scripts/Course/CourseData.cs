@@ -5,6 +5,7 @@ namespace Course
         private float m_Price;
         private float m_MotivationDelta;
         private float m_ScoreDelta;
+        private float m_Time;
 
         public float Price => m_Price;
 
@@ -17,6 +18,7 @@ namespace Course
             m_Price = 1;
             m_MotivationDelta = 1;
             m_ScoreDelta = 1;
+            m_Time = 60;
         }
     }
 }

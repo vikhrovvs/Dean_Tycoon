@@ -10,5 +10,7 @@ namespace Student
 
         public float m_MINMotivation;
         public float m_MAXMotivation;
+
+        public int price;
     }
 }

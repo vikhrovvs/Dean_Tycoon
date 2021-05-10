@@ -40,6 +40,8 @@ namespace Employee
                         {
                             return;
                         }
+
+                        Game.Player.CreateTask(Game.Player.DeskDatas[0], Game.Player.GroupDatas[0]);
                         Debug.Log("Hit on the desk!");
                     }
                 }

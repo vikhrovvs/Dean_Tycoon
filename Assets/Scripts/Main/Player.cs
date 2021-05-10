@@ -86,5 +86,12 @@ namespace Main
             Debug.Log("It's raising time, honey");
             Debug.Log($"Money: {Money}");
         }
+
+        public void CreateTask(DeskData deskData, GroupData groupData)
+        {
+            Debug.Log("Task created");
+            TaskData newTask = new TaskData(deskData, groupData);
+            TaskDatas.Add(newTask);
+        }
     }
 }

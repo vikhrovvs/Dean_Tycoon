@@ -9,10 +9,6 @@ namespace Task
     public class TaskController : IController
     {
         private float m_StartTime;
-        private float m_TimeBeforeSpending = 600f;
-        private float m_ScoreMultiplier = 5f;
-        private float m_SkillMultiplier = 5f;
-        private float m_BaseRaise = 1000f;
 
         public void OnStart()
         {
@@ -31,7 +27,7 @@ namespace Task
             {
                 task.MakeProgress(deltaTime);
             }
-                //m_PassedTimeAtPreviousFrame = passedTime;
+            //m_PassedTimeAtPreviousFrame = passedTime;
         }
     }
 }

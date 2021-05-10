@@ -12,6 +12,7 @@ namespace Employee
         public void AttachData(DeskData data)
         {
             m_Data = data;
+            transform.position = m_Data.Node.Position;
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Employee;
 using UnityEngine;
 
 namespace Runtime
@@ -8,6 +9,9 @@ namespace Runtime
     {
         private List<IController> m_Controllers;
         private bool m_IsRunning = false;
+        
+        [SerializeField]
+        public DeskAsset InitDeskAsset;
         private void Update()
         {
             if (!m_IsRunning)
@@ -26,7 +30,11 @@ namespace Runtime
         
         private void CreateAllControllers()
         {
-            m_Controllers = new List<IController>();
+            m_Controllers = new List<IController>{
+                new DeskSpawnController(Game.Player.Grid),
+                new DeskRaycastController(Game.Player.GridHolder)
+            };
+            
         }
         
         public void StopRunning()

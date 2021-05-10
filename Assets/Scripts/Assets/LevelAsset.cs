@@ -14,9 +14,6 @@ namespace Assets
     public class LevelAsset : ScriptableObject
     {
         public SceneAsset SceneAsset;
-        public DeskAsset InitDeskAsset;
-        public Vector3Int InitDeskPosition;
         public StudentAsset[] StudentAssets;
-
     }
 }

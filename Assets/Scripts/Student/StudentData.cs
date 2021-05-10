@@ -11,6 +11,10 @@ namespace Student
         private float m_Motivation;
         private StudentAsset m_Asset;
 
+        public float Score => m_Score;
+
+        public float Motivation => m_Motivation;
+
         public StudentData(StudentAsset asset)
         {
             m_Score = Random.Range(asset.m_MINScore, asset.m_MAXScore);

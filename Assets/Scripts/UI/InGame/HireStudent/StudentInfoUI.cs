@@ -1,9 +1,8 @@
-using Runtime;
 using Student;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.InGame.HireStudent
 {
     public class StudentInfoUI: MonoBehaviour
     {
@@ -29,7 +28,7 @@ namespace UI
 
         private void OnClick()
         {
-            Debug.Log("Click!");
+            Debug.Log("Hired student " + m_Asset.m_StudentType);
             //Game.Player.HireStudent(m_Asset);
         }
     }

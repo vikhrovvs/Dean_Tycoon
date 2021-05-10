@@ -13,7 +13,7 @@ namespace Runtime
         private static AssetRoot s_AssetRoot;
         private static LevelAsset s_CurrentLevel;
 
-        private static Runner s_Runner;
+        public static Runner s_Runner;
         
         public static Player Player => s_Player;
         public static AssetRoot AssetRoot => s_AssetRoot;

@@ -19,6 +19,7 @@ namespace Employee
         public DeskData(DeskAsset mAsset, Node node)
         {
             m_Asset = mAsset;
+            m_Node = node;
         }
 
         public void AttachView(DeskView view)

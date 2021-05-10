@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 71d439e4986a4ed9a22571a1b95e7986
+guid: a055f2e7c914e494398f439f032aafa9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - SceneAsset: {instanceID: 0}
-  - InitDeskAsset: {fileID: 11400000, guid: fdd9e455fa5683e4e9c7306e42b09b1c, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

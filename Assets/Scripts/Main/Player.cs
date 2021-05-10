@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Employee;
 using Field;
 using UnityEngine;
 using Grid = Field.Grid;
@@ -12,6 +13,9 @@ namespace Main
 
         public readonly GridHolder GridHolder;
         public readonly Grid Grid;
+        public List<DeskData> DeskDatas = new List<DeskData>();
+
+
         //public readonly EnemySearch EnemySearch;
 
         public Player()
@@ -19,7 +23,8 @@ namespace Main
             GridHolder = Object.FindObjectOfType<GridHolder>();
             GridHolder.CreateGrid();
             Grid = GridHolder.Grid;
-
+            
+            
 
             //EnemySearch = new EnemySearch(m_EnemyDatas);
         }

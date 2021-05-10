@@ -18,6 +18,8 @@ namespace Field
 
         private Camera m_Camera;
 
+        public Camera Camera => m_Camera;
+
         private Vector3 m_Offset;
 
         private void Awake()
@@ -88,6 +90,8 @@ namespace Field
         private void OnValidate()
         {
             m_Camera = Camera.main;
+            //Camera.main.transform.position = new Vector3(10, 5, -15);
+            //Camera.main.transform.LookAt(new Vector3(0, 0, 0));
             float width = m_GridWidth * m_NodeSize;
             float height = m_GridHeight * m_NodeSize;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Employee;
 using Main;
 using Student;
+using Task;
 using UnityEngine;
 
 namespace Runtime
@@ -40,6 +41,8 @@ namespace Runtime
                 new DeskRaycastController(Game.Player.GridHolder),
                 new SpendingsController(),
                 new BudgetRaiseController(),
+                new TaskController(),
+                new TaskCompletedController(),
             };
             
         }

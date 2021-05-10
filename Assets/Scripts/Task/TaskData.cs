@@ -15,6 +15,7 @@ namespace Task
         private float m_Time;
 
         public event Action<float> ProgressChange;
+        public bool IsCompleted = false;
         
         public float Price => m_Price;
         public DeskData AssignedDesk;
@@ -23,8 +24,8 @@ namespace Task
 
         public float ScoreDelta => m_ScoreDelta;
 
-        public float CurrentProgress;
-        public float Duration;
+        public float CurrentProgress = 0f;
+        public float Duration = 100f;
 
         public TaskData(DeskData assignedDesk, GroupData assignedGroup)
         {
@@ -35,19 +36,26 @@ namespace Task
 
             AssignedDesk = assignedDesk;
             AssignedGroup = assignedGroup;
+            //Game.Player.TaskDatas.Add(this);
         }
 
         public void MakeProgress(float deltaTime)
         {
-            float currentProgress = Mathf.Max(Duration, CurrentProgress + deltaTime * AssignedDesk.Skill);
+            float currentProgress = Mathf.Min(Duration, CurrentProgress + deltaTime * AssignedDesk.Skill);
+            Debug.Log(CurrentProgress + " " + deltaTime);
             CurrentProgress = currentProgress;
             ProgressChange?.Invoke(CurrentProgress);
+            if (CurrentProgress >= Duration)
+            {
+                IsCompleted = true;
+            }
             
         }
 
-        void TaskCompleted()
+        public void TaskCompleted()
         {
             Debug.Log("Removed task");
+            AssignedGroup.PassCourse(this);
             Game.Player.TaskDatas.Remove(this);
         }
     }

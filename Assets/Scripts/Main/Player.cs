@@ -93,5 +93,12 @@ namespace Main
         {
             m_TaskManagementUI = taskManagementUI;
         }
+      
+        public void CreateTask(DeskData deskData, GroupData groupData)
+        {
+            Debug.Log("Task created");
+            TaskData newTask = new TaskData(deskData, groupData);
+            TaskDatas.Add(newTask);
+        }
     }
 }

@@ -39,6 +39,7 @@ namespace Runtime
                 new DeskSpawnController(Game.Player.Grid),
                 new DeskRaycastController(Game.Player.GridHolder),
                 new SpendingsController(),
+                new BudgetRaiseController(),
             };
             
         }

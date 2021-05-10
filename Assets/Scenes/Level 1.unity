@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitDeskAsset: {fileID: 11400000, guid: fdd9e455fa5683e4e9c7306e42b09b1c, type: 2}
+  InitGroupAsset: {fileID: 11400000, guid: c6d381a94fdd50b4bbd5963a8044455d, type: 2}
 --- !u!4 &187828919
 Transform:
   m_ObjectHideFlags: 0

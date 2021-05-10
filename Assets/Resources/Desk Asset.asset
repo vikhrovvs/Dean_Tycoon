@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Desk Asset
   m_EditorClassIdentifier: 
   ViewPrefab: {fileID: 3954879215483807897, guid: cce4e101135128e4ea13ded5863e358f, type: 3}
+  Skill: 10

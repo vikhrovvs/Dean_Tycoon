@@ -5,6 +5,7 @@ using Field;
 using Runtime;
 using Student;
 using Task;
+using UI.InGame.TaskManagement;
 using UnityEngine;
 using Grid = Field.Grid;
 using Object = UnityEngine.Object;
@@ -27,6 +28,7 @@ namespace Main
 
 
         //public readonly EnemySearch EnemySearch;
+        private TaskManagementUI m_TaskManagementUI;
 
         public Player()
         {
@@ -87,6 +89,11 @@ namespace Main
             Debug.Log($"Money: {Money}");
         }
 
+        public void SetTaskInfoUI(TaskManagementUI taskManagementUI)
+        {
+            m_TaskManagementUI = taskManagementUI;
+        }
+      
         public void CreateTask(DeskData deskData, GroupData groupData)
         {
             Debug.Log("Task created");

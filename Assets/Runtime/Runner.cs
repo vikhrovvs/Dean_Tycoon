@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Employee;
+using Main;
+using Student;
 using UnityEngine;
 
 namespace Runtime
@@ -12,6 +14,9 @@ namespace Runtime
         
         [SerializeField]
         public DeskAsset InitDeskAsset;
+
+        [SerializeField] 
+        public GroupAsset InitGroupAsset;
         private void Update()
         {
             if (!m_IsRunning)
@@ -32,7 +37,8 @@ namespace Runtime
         {
             m_Controllers = new List<IController>{
                 new DeskSpawnController(Game.Player.Grid),
-                new DeskRaycastController(Game.Player.GridHolder)
+                new DeskRaycastController(Game.Player.GridHolder),
+                new SpendingsController(),
             };
             
         }

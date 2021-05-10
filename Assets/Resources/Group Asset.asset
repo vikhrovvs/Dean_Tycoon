@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3493e3c1665862046b030f2f1826f0a3, type: 3}
-  m_Name: Common Student
+  m_Script: {fileID: 11500000, guid: f0321646907f4d62b5f1f7582b58712a, type: 3}
+  m_Name: Group Asset
   m_EditorClassIdentifier: 
-  m_StudentType: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u0447\u0435\u043B"
-  m_MINScore: 3
-  m_MAXScore: 10
-  m_MINMotivation: 0.5
-  m_MAXMotivation: 1.5
-  price: 0
+  MaxGroupSize: 20

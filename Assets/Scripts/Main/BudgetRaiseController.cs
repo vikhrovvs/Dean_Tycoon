@@ -5,15 +5,13 @@ using UnityEngine;
 
 namespace Main
 {
-    public class SpendingsController : IController
+    public class BudgetRaiseController : IController
     {
-        //public SpawnWavesAsset m_SpawnWaves;
-        //private Grid m_Grid;
-
         private float m_StartTime;
-        private float m_TimeBeforeRaising = 60f;
-        private float m_ScoreMultiplier = 10f;
-        private float m_SkillMultiplier = 20f;
+        private float m_TimeBeforeSpending = 600f;
+        private float m_ScoreMultiplier = 5f;
+        private float m_SkillMultiplier = 5f;
+        private float m_BaseRaise = 1000f;
 
         public void OnStart()
         {
@@ -28,22 +26,22 @@ namespace Main
         public void Tick()
         {
             float passedTime = Time.time - m_StartTime;
-            float charge = 0f;
-            if (passedTime > m_TimeBeforeRaising)
+            float raising = m_BaseRaise;
+            if (passedTime > m_TimeBeforeSpending)
             {
-                Debug.Log("Charge " + Time.time);
+                Debug.Log("Raising " + Time.time);
                 m_StartTime = Time.time;
                 foreach (GroupData group in Game.Player.GroupDatas)
                 {
-                    charge += group.GetScore() * m_ScoreMultiplier;
+                    raising += group.GetScore() * m_ScoreMultiplier;
                 }
 
                 foreach (DeskData desk in Game.Player.DeskDatas)
                 {
-                    charge += desk.Skill * m_SkillMultiplier;
+                    raising += desk.Skill * m_SkillMultiplier;
                 }
-                Debug.Log($"Charge: {charge}");
-                Game.Player.Charge(charge);
+                Debug.Log($"Raising: {raising}");
+                Game.Player.Raise(raising);
                 return;
             }
             //m_PassedTimeAtPreviousFrame = passedTime;

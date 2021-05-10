@@ -8,5 +8,6 @@ namespace Employee
     public class DeskAsset : ScriptableObject
     {
         public DeskView ViewPrefab;
+        public float Skill = 10f;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Employee;
 using Field;
@@ -5,12 +6,13 @@ using Runtime;
 using Student;
 using UnityEngine;
 using Grid = Field.Grid;
+using Object = UnityEngine.Object;
 
 namespace Main
 {
     public class Player
     {
-        public float Money;
+        public float Money = 1000f;
         public List<StudentData> Students;
 
 
@@ -18,6 +20,8 @@ namespace Main
         public readonly Grid Grid;
         public List<DeskData> DeskDatas = new List<DeskData>();
         public List<GroupData> GroupDatas = new List<GroupData>();
+
+        public event Action<float> MoneyChanged;
 
 
         //public readonly EnemySearch EnemySearch;
@@ -68,8 +72,17 @@ namespace Main
         public void Charge(float charge)
         {
             Money -= charge;
+            MoneyChanged?.Invoke(Money);
             Debug.Log("It's paying time, honey");
-            Debug.Log("Money: " + Money);
+            Debug.Log($"Money: {Money}");
+        }
+
+        public void Raise(float raising)
+        {
+            Money += raising;
+            MoneyChanged?.Invoke(Money);
+            Debug.Log("It's raising time, honey");
+            Debug.Log($"Money: {Money}");
         }
     }
 }

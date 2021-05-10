@@ -1,10 +1,9 @@
-using System.Collections.Generic;
 using Runtime;
 using Student;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.InGame.HireStudent
 {
     public class HireStudentsUI : MonoBehaviour
     {

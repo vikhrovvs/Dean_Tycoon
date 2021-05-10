@@ -27,6 +27,7 @@ namespace Runtime
 
         public static void StartLevel(LevelAsset levelAsset)
         {
+            Debug.Log("Tried");
             s_CurrentLevel = levelAsset;
             AsyncOperation operation = SceneManager.LoadSceneAsync(levelAsset.SceneAsset.name);
             operation.completed += StartPlayer;

@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d5e7ad72e8445db25705ee73cb71cf, type: 3}
-  m_Name: Asset root
+  m_Script: {fileID: 11500000, guid: c12c56fb2b9597149ae07cc87cc20215, type: 3}
+  m_Name: Desk Asset
   m_EditorClassIdentifier: 
-  UIScene: {fileID: 102900000, guid: a0af6888d0b43c44fac64ec69ad04bf6, type: 3}
-  Levels:
-  - {fileID: 11400000, guid: 7ba9ec0d9de349047a209f4ef6f9f50e, type: 2}
+  ViewPrefab: {fileID: 3954879215483807897, guid: cce4e101135128e4ea13ded5863e358f, type: 3}

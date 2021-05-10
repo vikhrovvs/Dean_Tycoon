@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d5e7ad72e8445db25705ee73cb71cf, type: 3}
-  m_Name: Asset root
+  m_Script: {fileID: 11500000, guid: 71d439e4986a4ed9a22571a1b95e7986, type: 3}
+  m_Name: Level 1
   m_EditorClassIdentifier: 
-  UIScene: {fileID: 102900000, guid: a0af6888d0b43c44fac64ec69ad04bf6, type: 3}
-  Levels:
-  - {fileID: 11400000, guid: 7ba9ec0d9de349047a209f4ef6f9f50e, type: 2}
+  SceneAsset: {fileID: 102900000, guid: 39f5dd96274dd64458e5d4aa1c0cd85c, type: 3}

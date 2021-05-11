@@ -57,7 +57,6 @@ namespace Task
             
             m_UI.SetProgressBar(currentProgress/Duration);
             
-            Debug.Log(CurrentProgress + " " + deltaTime);
             CurrentProgress = currentProgress;
             ProgressChange?.Invoke(CurrentProgress);
             if (CurrentProgress >= Duration)

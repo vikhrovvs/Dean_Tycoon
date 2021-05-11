@@ -1,3 +1,4 @@
+using Runtime;
 using Task;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,7 +25,13 @@ namespace UI.InGame.TaskSelection
             m_Score.text = $"Изменит балл студентов на: {data.ScoreDelta}";
 
             m_TaskSelectionUI = taskSelectionUI;
-            m_Button.onClick.AddListener(m_TaskSelectionUI.CloseSelection);
+            m_Button.onClick.AddListener(ChooseThisTask);
+        }
+
+        private void ChooseThisTask()
+        {
+            Game.Player.AssignTask(m_TaskSelectionUI.m_DeskData, m_TaskSelectionUI.m_GroupData, m_Data);
+            m_TaskSelectionUI.CloseSelection();
         }
 
         public void CloseUI()

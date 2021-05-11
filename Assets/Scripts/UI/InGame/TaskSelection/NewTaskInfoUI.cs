@@ -21,5 +21,10 @@ namespace UI.InGame.TaskSelection
             m_Motivation.text = $"Изменит мотивацию студентов на: {data.MotivationDelta}";
             m_Price.text = $"Изменит балл студентов на: {data.ScoreDelta}";
         }
+
+        public void CloseUI()
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace Task
         public float ScoreDelta => m_ScoreDelta;
 
         public float CurrentProgress = 0f;
-        public float Duration = 100f;
+        public float Duration;
 
         private TaskInfoUI m_UI;
 
@@ -34,12 +34,13 @@ namespace Task
         {
             m_Price = price;
             m_MotivationDelta = motivationDelta;
-            m_ScoreDelta = ScoreDelta;
+            m_ScoreDelta = mScoreDelta;
+            Duration = duration;
 
 
             //Game.Player.TaskDatas.Add(this);
 
-    
+
         }
 
         public void AssignTask(DeskData assignedDesk, GroupData assignedGroup)

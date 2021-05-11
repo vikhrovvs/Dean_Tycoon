@@ -16,7 +16,7 @@ namespace Employee
         
         public void OnStart()
         {
-            SpawnDesk(Game.s_Runner.InitDeskAsset, m_Grid.GetNode(0, 0));
+            SpawnDesk(Game.s_Runner.InitDeskAsset, m_Grid.GetNode(Mathf.RoundToInt(m_Grid.Height/2), Mathf.RoundToInt(m_Grid.Width/2)));
         }
 
         public void OnStop()

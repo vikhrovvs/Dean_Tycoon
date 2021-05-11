@@ -24,13 +24,14 @@ namespace UI.InGame.TaskSelection
             foreach (TaskData taskData in Game.Player.TaskPoolDatas)
             {
                 NewTaskInfoUI newTask = Instantiate(m_NewTaskInfoUIPrefab, m_SelectionObject.transform);
-                newTask.SetTask(taskData);
+                newTask.SetTask(taskData, this);
                 m_Tasks.Add(newTask);
             }
         }
 
         public void CloseSelection()
         {
+            Debug.Log("Try to close selection");
             foreach (NewTaskInfoUI newTaskInfoUI in m_Tasks)
             {
                 // TODO: pooling

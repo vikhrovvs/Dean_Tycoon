@@ -10,16 +10,21 @@ namespace UI.InGame.TaskSelection
         [SerializeField] private Text m_Duration;
         [SerializeField] private Text m_Motivation;
         [SerializeField] private Text m_Score;
+        [SerializeField] private Button m_Button;
 
         private TaskData m_Data;
+        private TaskSelectionUI m_TaskSelectionUI;
 
-        public void SetTask(TaskData data)
+        public void SetTask(TaskData data, TaskSelectionUI taskSelectionUI)
         {
             m_Data = data;
             m_Price.text = $"Стоимость выполнения: {data.Price}";
             m_Duration.text = $"Сложность выполнения: {data.Duration}";
             m_Motivation.text = $"Изменит мотивацию студентов на: {data.MotivationDelta}";
-            m_Price.text = $"Изменит балл студентов на: {data.ScoreDelta}";
+            m_Score.text = $"Изменит балл студентов на: {data.ScoreDelta}";
+
+            m_TaskSelectionUI = taskSelectionUI;
+            m_Button.onClick.AddListener(m_TaskSelectionUI.CloseSelection);
         }
 
         public void CloseUI()

@@ -46,6 +46,15 @@ namespace Runtime
             SceneManager.LoadScene(AssetRoot.UIScene.name, LoadSceneMode.Additive);
         }
 
+        public static void GameOver()
+        {
+            Debug.Log("GameOver");
+            StopPlaying();
+            SceneManager.UnloadSceneAsync(s_CurrentLevel.name);
+            s_CurrentLevel = AssetRoot.Levels[AssetRoot.Levels.Count - 1];
+            AsyncOperation operation = SceneManager.LoadSceneAsync("Scenes/GameOver");
+        }
+
         public static void StopPlaying()
         {
             s_Runner.StopRunning();

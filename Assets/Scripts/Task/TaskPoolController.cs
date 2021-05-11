@@ -7,7 +7,6 @@ namespace Task
     {
         private float m_StartTime;
         private float m_TimeBeforeUpdatingPool = 300f;
-        private float m_BaseRaise = 1000f;
 
         public void OnStart()
         {

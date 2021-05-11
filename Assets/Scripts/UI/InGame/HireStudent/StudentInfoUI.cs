@@ -20,7 +20,7 @@ namespace UI.InGame.HireStudent
         {
             m_Asset = asset;
             m_StudentType.text = asset.m_StudentType;
-            m_PriceText.text = $"Стоимость обучения: {asset.price}";
+            m_PriceText.text = $"Стоимость обучения: {2.5f*(asset.m_MAXScore + asset.m_MINScore) + 7.5f * (asset.m_MAXMotivation + asset.m_MINMotivation)}";
             m_ScoreText.text = $"Начальный балл: от {asset.m_MINScore} до {asset.m_MAXScore}";
             m_MotivationText.text = $"Начальная мотивация: от {asset.m_MINMotivation} до {asset.m_MAXMotivation}";
             

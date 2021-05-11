@@ -46,7 +46,7 @@ namespace Main
         public void HireStudent(StudentAsset asset)
         {
             StudentData data = new StudentData(asset);
-            
+            Game.Player.Charge((asset.m_MAXScore + asset.m_MINScore) * 2.5f + (asset.m_MAXMotivation  + asset.m_MINMotivation) * 7.5f);
             foreach (GroupData group in GroupDatas)
             {
                 if (group.StudentDatas.Count < group.Asset.MaxGroupSize)
@@ -81,6 +81,11 @@ namespace Main
             MoneyChanged?.Invoke(Money);
             Debug.Log("It's paying time, honey");
             Debug.Log($"Money: {Money}");
+
+            if (Money < -2000f)
+            {
+                Game.GameOver();
+            }
         }
 
         public void Raise(float raising)
@@ -111,6 +116,7 @@ namespace Main
         public void AssignTask(DeskData deskData, GroupData groupData, TaskData taskData)
         {
             taskData.AssignTask(deskData, groupData);
+            TaskDatas.Add(taskData);
             TaskPoolDatas.Remove(taskData);
         }
     }

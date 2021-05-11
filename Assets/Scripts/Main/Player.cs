@@ -5,6 +5,7 @@ using Field;
 using Runtime;
 using Student;
 using Task;
+using UI.InGame;
 using UI.InGame.TaskManagement;
 using UI.InGame.TaskSelection;
 using UnityEngine;
@@ -33,6 +34,7 @@ namespace Main
         //public readonly EnemySearch EnemySearch;
         public TaskManagementUI TaskManagementUI;
         public TaskSelectionUI TaskSelectionUI;
+        public PauseHandler PauseHandler;
 
         public Player()
         {
@@ -70,11 +72,16 @@ namespace Main
         public void Pause()
         {
             Time.timeScale = 0f;
+            PauseHandler.Pause();
         }
 
         public void UnPause()
         {
             Time.timeScale = 1f;
+            if (PauseHandler != null)
+            {
+                PauseHandler.UnPause();
+            }
         }
 
         public void Charge(float charge)
@@ -106,6 +113,11 @@ namespace Main
         public void SetTaskSelectionUI(TaskSelectionUI taskSelectionUI)
         {
             TaskSelectionUI = taskSelectionUI;
+        }
+
+        public void SetPauseHandler(PauseHandler pauseHandler)
+        {
+            PauseHandler = pauseHandler;
         }
       
         public void CreateTask()

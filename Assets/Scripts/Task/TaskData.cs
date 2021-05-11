@@ -47,6 +47,9 @@ namespace Task
         public void MakeProgress(float deltaTime)
         {
             float currentProgress = Mathf.Min(Duration, CurrentProgress + deltaTime * AssignedDesk.Skill);
+            
+            m_UI.SetProgressBar(currentProgress/Duration);
+            
             Debug.Log(CurrentProgress + " " + deltaTime);
             CurrentProgress = currentProgress;
             ProgressChange?.Invoke(CurrentProgress);

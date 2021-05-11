@@ -29,7 +29,7 @@ namespace Runtime
         {
             Debug.Log("Tried");
             s_CurrentLevel = levelAsset;
-            AsyncOperation operation = SceneManager.LoadSceneAsync(levelAsset.SceneAsset.name);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(levelAsset.SceneName);
             operation.completed += StartPlayer;
         }
 
@@ -43,7 +43,7 @@ namespace Runtime
             s_Runner = Object.FindObjectOfType<Runner>();
             s_Runner.StartRunning();
 
-            SceneManager.LoadScene(AssetRoot.UIScene.name, LoadSceneMode.Additive);
+            SceneManager.LoadScene(AssetRoot.UISceneName, LoadSceneMode.Additive);
         }
 
         public static void GameOver()

@@ -1,8 +1,4 @@
-using System.Collections;
-using Assets;
 using Field;
-using Runtime;
-using UnityEngine;
 
 namespace Employee
 {

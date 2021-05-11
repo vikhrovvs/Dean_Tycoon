@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d5e7ad72e8445db25705ee73cb71cf, type: 3}
   m_Name: Asset root
   m_EditorClassIdentifier: 
-  UIScene: {fileID: 102900000, guid: a0af6888d0b43c44fac64ec69ad04bf6, type: 3}
+  UISceneName: UI
   Levels:
   - {fileID: 11400000, guid: 7ba9ec0d9de349047a209f4ef6f9f50e, type: 2}
   - {fileID: 11400000, guid: 87832dee40a48ba4b8a3787eed598fc1, type: 2}

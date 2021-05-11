@@ -42,6 +42,7 @@ namespace Runtime
                 new SpendingsController(),
                 new BudgetRaiseController(),
                 new TaskController(),
+                new TaskPoolController(),
                 new TaskCompletedController(),
             };
             

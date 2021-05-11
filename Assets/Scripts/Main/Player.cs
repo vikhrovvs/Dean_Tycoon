@@ -9,6 +9,7 @@ using UI.InGame.TaskManagement;
 using UnityEngine;
 using Grid = Field.Grid;
 using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 namespace Main
 {
@@ -23,6 +24,7 @@ namespace Main
         public List<DeskData> DeskDatas = new List<DeskData>();
         public List<GroupData> GroupDatas = new List<GroupData>();
         public List<TaskData> TaskDatas = new List<TaskData>();
+        public List<TaskData> TaskPoolDatas = new List<TaskData>();
 
         public event Action<float> MoneyChanged;
 
@@ -94,11 +96,22 @@ namespace Main
             TaskManagementUI = taskManagementUI;
         }
       
-        public void CreateTask(DeskData deskData, GroupData groupData)
+        public void CreateTask()
         {
             Debug.Log("Task created");
-            TaskData newTask = new TaskData(deskData, groupData);
-            TaskDatas.Add(newTask);
+            float scoreDelta = Random.Range(-2f, 10f);
+            float motivationDelta = Random.Range(-0.5f, 1.5f);
+            float price = Random.Range(0.8f, 1.2f) * (Mathf.Max(scoreDelta, 0) + Mathf.Max(motivationDelta, 0) * 3f) * 10f + 50f;
+            float duration = Random.Range(0.8f, 1.2f) * 5f * price;
+            TaskData newTask = new TaskData(price, motivationDelta, scoreDelta, duration);
+            TaskPoolDatas.Add(newTask);
+            //TODO Make a classification of the tasks based on the generated result
+        }
+
+        public void AssignTask(DeskData deskData, GroupData groupData, TaskData taskData)
+        {
+            taskData.AssignTask(deskData, groupData);
+            TaskPoolDatas.Remove(taskData);
         }
     }
 }

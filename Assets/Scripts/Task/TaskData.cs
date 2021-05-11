@@ -30,17 +30,23 @@ namespace Task
 
         private TaskInfoUI m_UI;
 
-        public TaskData(DeskData assignedDesk, GroupData assignedGroup)
+        public TaskData(float price, float motivationDelta, float mScoreDelta, float duration)
         {
-            m_Price = 1;
-            m_MotivationDelta = 1;
-            m_ScoreDelta = 1;
-            m_Time = 60;
+            m_Price = price;
+            m_MotivationDelta = motivationDelta;
+            m_ScoreDelta = ScoreDelta;
 
-            AssignedDesk = assignedDesk;
-            AssignedGroup = assignedGroup;
+
             //Game.Player.TaskDatas.Add(this);
 
+    
+        }
+
+        public void AssignTask(DeskData assignedDesk, GroupData assignedGroup)
+        {
+            AssignedDesk = assignedDesk;
+            AssignedGroup = assignedGroup;
+            Game.Player.Charge(m_Price);
             m_UI = Game.Player.TaskManagementUI.AddTask(this);
         }
 

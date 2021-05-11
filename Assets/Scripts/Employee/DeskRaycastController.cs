@@ -1,5 +1,6 @@
 using Field;
 using Runtime;
+using Student;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -40,8 +41,10 @@ namespace Employee
                         {
                             return;
                         }
-
-                        Game.Player.CreateTask(Game.Player.DeskDatas[0], Game.Player.GroupDatas[0]);
+                        Debug.Log("XYU " + Game.Player.DeskDatas.Count + " " + 
+                                  Game.Player.GroupDatas.Count + " " +
+                                  Game.Player.TaskPoolDatas.Count);
+                        Game.Player.AssignTask(Game.Player.DeskDatas[0], Game.Player.GroupDatas[0], Game.Player.TaskPoolDatas[0]);
                         Debug.Log("Hit on the desk!");
                     }
                 }

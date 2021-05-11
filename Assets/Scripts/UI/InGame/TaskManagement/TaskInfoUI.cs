@@ -13,7 +13,7 @@ namespace UI.InGame.TaskManagement
         public void SetTask(TaskData data)
         {
             m_Data = data;
-            duration.text = $"Duration: {data.Duration}";
+            duration.text = $"Сложность: {data.Duration}";
         }
 
         public void Complete()

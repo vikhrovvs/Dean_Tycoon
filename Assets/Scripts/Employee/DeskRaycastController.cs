@@ -44,7 +44,15 @@ namespace Employee
                         Debug.Log("XYU " + Game.Player.DeskDatas.Count + " " + 
                                   Game.Player.GroupDatas.Count + " " +
                                   Game.Player.TaskPoolDatas.Count);
-                        Game.Player.TaskSelectionUI.OpenSelection(Game.Player.DeskDatas[0], Game.Player.GroupDatas[0]);
+                        if ((Game.Player.GroupDatas != null) && (Game.Player.GroupDatas.Count > 0))
+                        {
+                            Game.Player.TaskSelectionUI.OpenSelection(Game.Player.DeskDatas[0],
+                                Game.Player.GroupDatas[0]);
+                        }
+                        else
+                        {
+                            Game.Player.TaskSelectionUI.ShowText();
+                        }
                         //Game.Player.AssignTask(Game.Player.DeskDatas[0], Game.Player.GroupDatas[0], Game.Player.TaskPoolDatas[0]);
                         Debug.Log("Hit on the desk!");
                     }

@@ -1,7 +1,10 @@
 using Runtime;
 using Task;
+using UI.InGame.TaskSelection;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 
 namespace UI.InGame.TaskSelection
 {
@@ -19,13 +22,18 @@ namespace UI.InGame.TaskSelection
         public void SetTask(TaskData data, TaskSelectionUI taskSelectionUI)
         {
             m_Data = data;
-            m_Price.text = $"Стоимость выполнения: {data.Price}";
-            m_Duration.text = $"Сложность выполнения: {data.Duration}";
-            m_Motivation.text = $"Изменит мотивацию студентов на: {data.MotivationDelta}";
-            m_Score.text = $"Изменит балл студентов на: {data.ScoreDelta}";
+            m_Price.text = $"Стоимость: {Round2f(data.Price)}";
+            m_Duration.text = $"Сложность: {Round2f(data.Duration)}";
+            m_Motivation.text = $"Мотивация: {Round2f(data.MotivationDelta)}";
+            m_Score.text = $"Успеваемость: {Round2f(data.ScoreDelta)}";
 
             m_TaskSelectionUI = taskSelectionUI;
             m_Button.onClick.AddListener(ChooseThisTask);
+        }
+
+        private float Round2f(float f)
+        {
+            return Mathf.Round(f * 100f) / 100f;
         }
 
         private void ChooseThisTask()

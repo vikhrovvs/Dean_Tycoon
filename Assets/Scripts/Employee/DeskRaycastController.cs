@@ -44,6 +44,7 @@ namespace Employee
                         Debug.Log("XYU " + Game.Player.DeskDatas.Count + " " + 
                                   Game.Player.GroupDatas.Count + " " +
                                   Game.Player.TaskPoolDatas.Count);
+                        Game.Player.TaskSelectionUI.OpenSelection();
                         Game.Player.AssignTask(Game.Player.DeskDatas[0], Game.Player.GroupDatas[0], Game.Player.TaskPoolDatas[0]);
                         Debug.Log("Hit on the desk!");
                     }

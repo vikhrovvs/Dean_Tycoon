@@ -13,11 +13,12 @@ namespace UI.InGame.TaskManagement
         
         private void Start()
         {
-            Game.Player.SetTaskInfoUI(this);
+            Game.Player.SetTaskManagementUI(this);
         }
 
         public TaskInfoUI AddTask(TaskData data)
         {
+            // TODO: pooling
             TaskInfoUI taskInfoUI = Instantiate(m_TaskInfoUIPrefab, m_Content);
             taskInfoUI.SetTask(data);
             return taskInfoUI;

@@ -17,6 +17,7 @@ namespace Student
 
         public StudentData(StudentAsset asset)
         {
+            // todo: change ranges
             m_Score = Random.Range(asset.m_MINScore, asset.m_MAXScore);
             m_Motivation = Random.Range(asset.m_MINMotivation, asset.m_MAXMotivation);
             m_Asset = asset;

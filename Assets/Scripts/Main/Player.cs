@@ -18,6 +18,8 @@ namespace Main
     public class Player
     {
         public float Money = 1000f;
+        public float AverageScore = 0;
+        
         public List<StudentData> Students;
 
 
@@ -29,6 +31,7 @@ namespace Main
         public List<TaskData> TaskPoolDatas = new List<TaskData>();
 
         public event Action<float> MoneyChanged;
+        public event Action<float> ScoreChanged;
 
 
         //public readonly EnemySearch EnemySearch;
@@ -56,6 +59,7 @@ namespace Main
                 if (group.StudentDatas.Count < group.Asset.MaxGroupSize)
                 {
                     group.AddStudent(data);
+                    UpdateScore();
                     return;
                 }
             }
@@ -66,7 +70,8 @@ namespace Main
             //data.AttachView(view);
             GroupDatas.Add(groupData);
             Debug.Log("Spawned Group");
-            //Students.Add(new StudentData(asset));
+            UpdateScore();
+            //Students.Add(new StudentData(asset)); //maybe Students.add(data)...
         }
 
         public void Pause()
@@ -88,8 +93,6 @@ namespace Main
         {
             Money -= charge;
             MoneyChanged?.Invoke(Money);
-            Debug.Log("It's paying time, honey");
-            Debug.Log($"Money: {Money}");
 
             if (Money < -2000f)
             {
@@ -101,8 +104,20 @@ namespace Main
         {
             Money += raising;
             MoneyChanged?.Invoke(Money);
-            Debug.Log("It's raising time, honey");
-            Debug.Log($"Money: {Money}");
+        }
+
+        public void UpdateScore()
+        {
+            int nGroups = 0;
+            float totalScore = 0;
+            foreach (GroupData groupData in GroupDatas)
+            {
+                totalScore += groupData.GetAvgScore();
+                nGroups += 1;
+            }
+
+            AverageScore = totalScore / nGroups;
+            ScoreChanged?.Invoke(AverageScore);
         }
 
         public void SetTaskManagementUI(TaskManagementUI taskManagementUI)
@@ -122,7 +137,6 @@ namespace Main
       
         public void CreateTask()
         {
-            Debug.Log("Task created");
             float scoreDelta = Random.Range(-2f, 10f);
             float motivationDelta = Random.Range(-0.5f, 1.5f);
             float price = Random.Range(0.8f, 1.2f) * (Mathf.Max(scoreDelta, 0) + Mathf.Max(motivationDelta, 0) * 3f) * 10f + 50f;

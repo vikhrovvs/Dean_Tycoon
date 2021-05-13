@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Runtime;
 using Task;
 using UnityEngine;
 
@@ -36,7 +37,7 @@ namespace Student
             {
                 student.PassCourse(task);
             }
-           
+            Game.Player.UpdateScore();
         }
 
         public float GetScore()

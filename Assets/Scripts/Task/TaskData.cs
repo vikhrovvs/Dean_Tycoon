@@ -69,7 +69,6 @@ namespace Task
         public void TaskCompleted()
         {
             m_UI.Complete();
-            Debug.Log("Removed task");
             AssignedGroup.PassCourse(this);
             Game.Player.TaskDatas.Remove(this);
         }

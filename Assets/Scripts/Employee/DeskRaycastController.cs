@@ -41,9 +41,9 @@ namespace Employee
                         {
                             return;
                         }
-                        Debug.Log("XYU " + Game.Player.DeskDatas.Count + " " + 
-                                  Game.Player.GroupDatas.Count + " " +
-                                  Game.Player.TaskPoolDatas.Count);
+                        //Debug.Log("XYU " + Game.Player.DeskDatas.Count + " " + 
+                        //          Game.Player.GroupDatas.Count + " " +
+                        //          Game.Player.TaskPoolDatas.Count);
                         if ((Game.Player.GroupDatas != null) && (Game.Player.GroupDatas.Count > 0))
                         {
                             Game.Player.TaskSelectionUI.OpenSelection(Game.Player.DeskDatas[0],

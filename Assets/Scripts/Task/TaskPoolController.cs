@@ -10,7 +10,6 @@ namespace Task
 
         public void OnStart()
         {
-            Debug.Log("TaskPoolController OnStart");
             m_StartTime = Time.time;
             for (int i = 0; i < 3; i++)
             {
@@ -25,7 +24,6 @@ namespace Task
 
         public void Tick()
         {
-            Debug.Log("TaskPoolController tick");
             float passedTime = Time.time - m_StartTime;
             if (passedTime > m_TimeBeforeUpdatingPool)
             {

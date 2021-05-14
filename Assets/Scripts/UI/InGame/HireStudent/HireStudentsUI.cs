@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Runtime;
 using Student;
 using UnityEngine;
@@ -21,6 +22,16 @@ namespace UI.InGame.HireStudent
             ConstructStudentList();
             
             CloseSelection();
+            
+            // Set font to multiple texts 
+            foreach (Text text in new List<Text> {
+                m_OpenSelectionButton.GetComponentInChildren<Text>(),
+                m_CloseSelectionButton.GetComponentInChildren<Text>()})
+            {
+                text.font = Game.AssetRoot.MainFont;
+            }
+            
+            
         }
         
         private void SubscribeOnButtons()

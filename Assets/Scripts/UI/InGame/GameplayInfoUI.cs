@@ -13,6 +13,8 @@ namespace UI.InGame
         private void OnEnable()
         {
             SetMoney(Game.Player.Money);
+            m_MoneyText.font = Game.AssetRoot.MainFont;
+            m_ScoreText.font = Game.AssetRoot.MainFont;
             Game.Player.MoneyChanged += SetMoney;
             Game.Player.ScoreChanged += SetScore;
         }

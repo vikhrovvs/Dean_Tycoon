@@ -12,6 +12,7 @@ namespace UI.InGame
         private void Start()
         {
             Game.Player.SetPauseHandler(this);
+            m_Image.GetComponentInChildren<Text>().font = Game.AssetRoot.MainFont;
         }
 
         public void Pause()

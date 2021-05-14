@@ -1,3 +1,4 @@
+using Runtime;
 using Task;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ namespace UI.InGame.TaskManagement
         {
             m_Data = data;
             duration.text = $"Сложность: {data.Duration}";
+            duration.font = Game.AssetRoot.MainFont;
         }
 
         public void Complete()

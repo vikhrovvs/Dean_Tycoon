@@ -8,5 +8,6 @@ namespace Assets
     {
         public string UISceneName;
         public List<LevelAsset> Levels;
+        public Font MainFont;
     }
 }

@@ -27,6 +27,7 @@ namespace UI.InGame.TaskSelection
             m_HireStudentsText.gameObject.SetActive(false);
             CloseSelection();
             m_CloseTaskSelectionButton.onClick.AddListener(CloseSelection);
+            m_CloseTaskSelectionButton.GetComponentInChildren<Text>().font = Game.AssetRoot.MainFont;
         }
 
         public void OpenSelection(DeskData deskData, GroupData groupData)

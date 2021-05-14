@@ -16,3 +16,4 @@ MonoBehaviour:
   Levels:
   - {fileID: 11400000, guid: 7ba9ec0d9de349047a209f4ef6f9f50e, type: 2}
   - {fileID: 11400000, guid: 87832dee40a48ba4b8a3787eed598fc1, type: 2}
+  MainFont: {fileID: 12800000, guid: 1bac9f03863ec1f439bbe460eb85849e, type: 3}

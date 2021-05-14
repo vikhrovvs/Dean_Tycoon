@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Runtime;
 using Task;
 using UI.InGame.TaskSelection;
@@ -29,6 +30,11 @@ namespace UI.InGame.TaskSelection
 
             m_TaskSelectionUI = taskSelectionUI;
             m_Button.onClick.AddListener(ChooseThisTask);
+            
+            foreach (Text text in new List<Text> {m_Price, m_Duration, m_Motivation, m_Score})
+            {
+                text.font = Game.AssetRoot.MainFont;
+            }
         }
 
         private float Round2f(float f)
